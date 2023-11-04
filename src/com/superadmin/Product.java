@@ -8,7 +8,9 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class Product {
@@ -21,7 +23,9 @@ public class Product {
 		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 		d.get("https://test-monster-chicken-admin.vercel.app/auth/login");
 		Thread.sleep(200);
-		// invalid login
+		
+// invalid login
+		
 		d.findElement(By.xpath("//*[@id=\"userName\"]")).click();
 		d.findElement(By.xpath("/html/body/app-root/app-login/div/div/div/div/div[1]/div[2]/div[2]/form/div[1]/input"))
 				.sendKeys("superAdmin@monster.chicken");
@@ -47,7 +51,9 @@ public class Product {
 		Thread.sleep(1000);
 
 		d.findElement(By.xpath("//*[@id=\"side-menu\"]/li[3]/a/span")).click();
+		
 // Categories
+		
 		d.findElement(By.xpath("//*[@id=\"side-menu\"]/li[3]/ul/li[2]/a/span")).click();
 		Thread.sleep(1000);
 		d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-category/div[1]/div/div/div[3]/button"))
@@ -55,7 +61,9 @@ public class Product {
 		Thread.sleep(1000);
 		d.findElement(By.xpath("/html/body/ngb-modal-window/div/div/div[2]/form/div/div[1]/div/ng-select/div/span"))
 				.click();
+		
 // sales product
+		
 		Robot r = new Robot();
 		r.keyPress(KeyEvent.VK_DOWN);
 		r.keyRelease(KeyEvent.VK_DOWN);
@@ -84,13 +92,17 @@ public class Product {
 		d.navigate().refresh();
 		Thread.sleep(1000);
 		d.get("https://test-monster-chicken-admin.vercel.app/products/categories");
-		// Categories filter
+		Thread.sleep(1000);
+		
+// Categories filter
+		
 		d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-category/div[1]/div/div/div[1]/ng-select"))
 				.click();
 		Robot a = new Robot();
 		a.keyPress(KeyEvent.VK_ENTER);
 		Thread.sleep(3000);
 		d.get("https://test-monster-chicken-admin.vercel.app/products/categories");
+		Thread.sleep(1000);
 		d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-category/div[1]/div/div/div[1]/ng-select"))
 				.click();
 		Robot b = new Robot();
@@ -100,6 +112,7 @@ public class Product {
 		Thread.sleep(3000);
 
 		d.get("https://test-monster-chicken-admin.vercel.app/products/categories");
+		Thread.sleep(1000);
 		d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-category/div[1]/div/div/div[1]/ng-select"))
 				.click();
 		Robot c = new Robot();
@@ -110,6 +123,7 @@ public class Product {
 		c.keyPress(KeyEvent.VK_ENTER);
 		Thread.sleep(3000);
 		d.get("https://test-monster-chicken-admin.vercel.app/products/categories");
+		Thread.sleep(1000);
 		d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-category/div[1]/div/div/div[1]/ng-select"))
 				.click();
 		Robot e = new Robot();
@@ -122,6 +136,7 @@ public class Product {
 		e.keyPress(KeyEvent.VK_ENTER);
 		Thread.sleep(3000);
 		d.get("https://test-monster-chicken-admin.vercel.app/products/categories");
+		Thread.sleep(1000);
 		d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-category/div[1]/div/div/div[1]/ng-select"))
 				.click();
 		Robot f = new Robot();
@@ -136,6 +151,7 @@ public class Product {
 		f.keyPress(KeyEvent.VK_ENTER);
 		Thread.sleep(3000);
 		d.get("https://test-monster-chicken-admin.vercel.app/products/categories");
+		Thread.sleep(1000);
 		d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-category/div[1]/div/div/div[1]/ng-select"))
 				.click();
 		Robot g = new Robot();
@@ -152,7 +168,9 @@ public class Product {
 		g.keyPress(KeyEvent.VK_ENTER);
 		Thread.sleep(3000);
 		d.navigate().refresh();
-		// Adding Raw product
+		
+// Adding Raw product
+		
 		d.get("https://test-monster-chicken-admin.vercel.app/products/list");
 		Thread.sleep(1000);
 		d.findElement(
@@ -186,6 +204,7 @@ public class Product {
 		// k.keyPress(KeyEvent.VK_ENTER);
 		// Thread.sleep(200);
 		d.findElement(By.xpath("/html/body/ngb-modal-window/div/div/div[2]/form/div/div[7]/div/input")).sendKeys("200");
+		Thread.sleep(500);
 		d.findElement(By.xpath("/html/body/ngb-modal-window/div/div/div[2]/form/div/div[8]/div/input")).sendKeys("300");
 		Thread.sleep(500);
 		d.findElement(By.xpath("/html/body/ngb-modal-window/div/div/div[2]/form/div/div[9]/div/textarea"))
@@ -209,6 +228,7 @@ public class Product {
 		d.navigate().refresh();
 
 // Product filter
+		
 		//d.get("https://test-monster-chicken-admin.vercel.app/products/list");
 		//Thread.sleep(5000);
 		d.findElement(By
@@ -281,18 +301,22 @@ public class Product {
 		feed.keyRelease(KeyEvent.VK_DOWN);	
 		feed.keyPress(KeyEvent.VK_ENTER);
 		Thread.sleep(3000);
-
-
-	
-	
-
-		// search option
-		// d.navigate().refresh();
-		// d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-category/div[1]/div/div/div[2]/div/input")).sendKeys("MC-PRO-CATE-2");
+// search option for product 
+      //d.navigate().refresh();
+      //d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-products/div/div/div[1]/div[2]/form/div[1]/div/input")).click();
+      //d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-products/div/div/div[1]/div[2]/form/div[1]/div/input")).sendKeys("MC-PRO-2");
+      //d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-products/div/div/div[1]/div[2]/form/div[1]/div/input")).sendKeys("Keys.RETURN");
+      //  WebElement code= d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-products/div/div/div[1]/div[2]/form/div[1]/div/input"));
+       // Actions search = new Actions(d);
+       // search.moveToElement(code).click().build().perform();
+   //   Thread.sleep(2000);
+        //code.sendKeys("MC-PRO-2");
+        //Thread.sleep(3000);
+    //  d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-products/div/div/div[1]/div[2]/form/div[1]/div/input")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
 		// Thread.sleep(5000);
-		// d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-category/div[1]/div/div/div[2]/div/input")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
-		// Thread.sleep(5000);
+		
 // CUtting center login
+		
 		d.get("https://test-monster-chicken-admin.vercel.app/auth/login");
 		Thread.sleep(1000);
 		d.findElement(By.xpath("//*[@id=\"userName\"]")).click();
@@ -303,10 +327,12 @@ public class Product {
 		d.findElement(
 				By.xpath("/html/body/app-root/app-login/div/div/div/div/div[1]/div[2]/div[2]/form/div[2]/div/input"))
 				.sendKeys("123monsterchicken");
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		d.findElement(By.xpath("/html/body/app-root/app-login/div/div/div/div/div[1]/div[2]/div[2]/form/div[3]/button"))
 				.click();
+		
 // Shop product purchase order
+		
 		Thread.sleep(3000);
 		d.findElement(By.xpath("//*[@id=\"side-menu\"]/li[5]/a/i")).click();
 		Thread.sleep(3000);
@@ -319,7 +345,9 @@ public class Product {
 		d.findElement(By.xpath(
 				"//*[@id=\"layout-wrapper\"]/div/div/app-purchase-order-add/div/div[2]/div/form/div/div/div/div[1]/div/ng-select/div/div/div[2]/input"))
 				.click();
+		
 // select raw product to purchase
+		
 		Robot h = new Robot();
 		h.keyPress(KeyEvent.VK_ENTER);
 		d.findElement(By.xpath(
@@ -351,7 +379,9 @@ public class Product {
 		Thread.sleep(3000);
 		d.findElement(By.xpath("/html/body/div/div/div[6]/button[1]")).click();
 		Thread.sleep(5000);
- //Superadmin supplier assigning 
+		
+ //Super Admin supplier assigning
+
 		d.get("https://test-monster-chicken-admin.vercel.app/auth/login");
 		d.findElement(By.xpath("/html/body/app-root/app-login/div/div/div/div/div[1]/div[2]/div[2]/form/div[1]/input"))
 		.sendKeys("superAdmin@monster.chicken");
@@ -380,6 +410,66 @@ Thread.sleep(1000);
 		supplier.keyPress(KeyEvent.VK_ENTER);
 		Thread.sleep(2000);
 		d.findElement(By.xpath("/html/body/ngb-modal-window/div/div/div[2]/form/div/div[2]/button")).click();
+		Thread.sleep(2000);
+// Ready for delivery
+		d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-purchase-order-list/div/div[2]/div/div/div/div/table/tbody/tr[1]/td[7]/div/button")).click();
+		Thread.sleep(2000);
+		d.findElement(By.xpath("/html/body/div/div/div[6]/button[1]")).click();
+		Thread.sleep(2000);
+// out for delivery 
+		d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-purchase-order-list/div/div[2]/div/div/div/div/table/tbody/tr[1]/td[7]/div/button")).click();
+		Thread.sleep(2000);
+		d.findElement(By.xpath("/html/body/div/div/div[6]/button[1]")).click();
+		Thread.sleep(2000);
+	
+//super admin successfully assigned the supplier 
+		
+//Cutting center ready to receive the order 
+		
+		d.get("https://test-monster-chicken-admin.vercel.app/auth/login");
+		Thread.sleep(200);
+	    d.findElement(By.xpath("//*[@id=\"userName\"]")).sendKeys("jhzpoenmuzqmajkrfv@cazlg.com");
+	    Thread.sleep(1000);
+	    d.findElement(By.xpath("/html/body/app-root/app-login/div/div/div/div/div[1]/div[2]/div[2]/form/div[2]/div/input")).sendKeys("123monsterchicken");
+	    Thread.sleep(1000);
+	    d.findElement(By.xpath("/html/body/app-root/app-login/div/div/div/div/div[1]/div[2]/div[2]/form/div[3]/button")).click();
+	    Thread.sleep(1000);
+	    d.findElement(By.xpath("//*[@id=\"side-menu\"]/li[5]/a/i")).click();
+	    Thread.sleep(1000);
+	    d.findElement(By.xpath("//*[@id=\"side-menu\"]/li[5]/ul/li[1]/a/span")).click();
+	    Thread.sleep(1000);
+// order received
+	    d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-purchase-order-list/div/div[2]/div/div/div/div/table/tbody/tr[1]/td[6]/div/button")).click();
+	    Thread.sleep(1000);
+	    d.findElement(By.xpath("/html/body/div/div/div[6]/button[1]")).click();
+	    Thread.sleep(1000);
+//Make payment 
+	    d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-purchase-order-list/div/div[2]/div/div/div/div/table/tbody/tr[1]/td[6]/div[1]/button")).click();
+	    Thread.sleep(1000);
+	    d.findElement(By.xpath("/html/body/ngb-modal-window/div/div/div[2]/form/div/div[1]/div/ng-select/div/span")).click();
+	    Thread.sleep(200);
+	    Robot payment = new Robot();
+	    payment.keyPress(KeyEvent.VK_DOWN);
+	    payment.keyRelease(KeyEvent.VK_DOWN);
+	    payment.keyPress(KeyEvent.VK_ENTER);
+	    Thread.sleep(200);
+	    d.findElement(By.xpath("/html/body/ngb-modal-window/div/div/div[2]/form/div/div[2]/button")).click();
+	    Thread.sleep(1000);
+// search by purchase number in CC
+	 // d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-purchase-order-list/div/div[1]/div[2]/div/div[2]/div[2]/div/input")).click();
+	  //d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-purchase-order-list/div/div[1]/div[2]/div/div[2]/div[2]/div/input")).sendKeys("MC-PO-47");
+	   // Thread.sleep(2000);
+	   // d.navigate().refresh();
+	    
+	    
+	    
+	
+		
+		
+		
+		
+		
+		
 		
 
 		
