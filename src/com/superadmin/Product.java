@@ -21,8 +21,8 @@ public class Product {
 		WebDriver d = new ChromeDriver();
 		d.manage().window().maximize();
 		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-		d.get("https://test-monster-chicken-admin.vercel.app/auth/login");
-		Thread.sleep(200);		
+	    d.get("https://test-monster-chicken-admin.vercel.app/auth/login");
+		Thread.sleep(200);	
 		
 // invalid login
 		
@@ -49,21 +49,17 @@ public class Product {
 		d.findElement(By.xpath("/html/body/app-root/app-login/div/div/div/div/div[1]/div[2]/div[2]/form/div[3]/button"))
 				.click();
 		Thread.sleep(1000);
-
-		d.findElement(By.xpath("//*[@id=\"side-menu\"]/li[3]/a/span")).click();
 		
 // Categories
 		
-		d.findElement(By.xpath("//*[@id=\"side-menu\"]/li[3]/ul/li[2]/a/span")).click();
+		d.findElement(By.xpath("//*[@id=\"side-menu\"]/li[3]/a/i")).click();
 		Thread.sleep(1000);
-		d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-category/div[1]/div/div/div[3]/button"))
-				.click();
+		d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/app-sidebar/div/ngx-simplebar/div[1]/div[2]/div/div/div/div/div/ul/li[3]/ul/li[2]/a/span")).click();
 		Thread.sleep(1000);
-		d.findElement(By.xpath("/html/body/ngb-modal-window/div/div/div[2]/form/div/div[1]/div/ng-select/div/span"))
-				.click();
+		d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-category/div[1]/div/div/div[3]/button")).click();
 		
 // sales product
-		
+		d.findElement(By.xpath("/html/body/ngb-modal-window/div/div/div[2]/form/div/div[1]/div/ng-select/div/span")).click();
 		Robot r = new Robot();
 		r.keyPress(KeyEvent.VK_DOWN);
 		r.keyRelease(KeyEvent.VK_DOWN);
@@ -303,17 +299,17 @@ public class Product {
 		feed.keyPress(KeyEvent.VK_ENTER);
 		Thread.sleep(3000);
 // search option for product 
-      //d.navigate().refresh();
-      //d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-products/div/div/div[1]/div[2]/form/div[1]/div/input")).click();
-      //d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-products/div/div/div[1]/div[2]/form/div[1]/div/input")).sendKeys("MC-PRO-2");
-      //d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-products/div/div/div[1]/div[2]/form/div[1]/div/input")).sendKeys("Keys.RETURN");
-      //  WebElement code= d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-products/div/div/div[1]/div[2]/form/div[1]/div/input"));
+      d.navigate().refresh();
+   //   d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-products/div/div/div[1]/div[2]/form/div[1]/div/input")).click();
+   //   d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-products/div/div/div[1]/div[2]/form/div[1]/div/input")).sendKeys("MC-PRO-2");
+     // d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-products/div/div/div[1]/div[2]/form/div[1]/div/input")).sendKeys("Keys.RETURN");
+       // WebElement code= d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-products/div/div/div[1]/div[2]/form/div[1]/div/input"));
        // Actions search = new Actions(d);
        // search.moveToElement(code).click().build().perform();
-   //   Thread.sleep(2000);
-        //code.sendKeys("MC-PRO-2");
-        //Thread.sleep(3000);
-    //  d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-products/div/div/div[1]/div[2]/form/div[1]/div/input")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
+     // Thread.sleep(2000);
+       // code.sendKeys("MC-PRO-2");
+       // Thread.sleep(3000);
+     // d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-products/div/div/div[1]/div[2]/form/div[1]/div/input")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
 		// Thread.sleep(5000);
 		
 // CUtting center login
@@ -536,7 +532,6 @@ Thread.sleep(1000);
 	    
 //Order list filter by order type 
 	    
-	    Thread.sleep(2000);
 	    d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-order-list/div/div[1]/div[2]/div/div[2]/div[1]/ng-select/div/span")).click();
 	    Thread.sleep(1000);
 	    Robot online = new Robot();
@@ -673,18 +668,19 @@ Thread.sleep(2000);
 	    
 // Adding supplier
 	    
-		d.get("https://test-monster-chicken-admin.vercel.app/auth/login");
-		Thread.sleep(200);
+	    d.get("https://test-monster-chicken-admin.vercel.app/auth/login");
+		Thread.sleep(200);	
+		
+	
 		d.findElement(By.xpath("/html/body/app-root/app-login/div/div/div/div/div[1]/div[2]/div[2]/form/div[1]/input"))
 		.sendKeys("superAdmin@monster.chicken");
 Thread.sleep(1000);
 d.findElement(
-		By.xpath("/html/body/app-root/app-login/div/div/div/div/div[1]/div[2]/div[2]/form/div[2]/div/input"))
-		.sendKeys("Monster@23Chicken");
+	By.xpath("/html/body/app-root/app-login/div/div/div/div/div[1]/div[2]/div[2]/form/div[2]/div/input")).sendKeys("Monster@23Chicken");
 Thread.sleep(1000);
 d.findElement(By.xpath("/html/body/app-root/app-login/div/div/div/div/div[1]/div[2]/div[2]/form/div[3]/button"))
 		.click();
-Thread.sleep(1000);
+      Thread.sleep(1000);
       d.findElement(By.xpath("//*[@id=\"side-menu\"]/li[6]/a/i")).click();
       Thread.sleep(1000);
       d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/app-sidebar/div/ngx-simplebar/div[1]/div[2]/div/div/div/div/div/ul/li[6]/ul/li[4]/a")).click();
@@ -722,13 +718,19 @@ Thread.sleep(1000);
 	  Thread.sleep(1000);
 	  d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-vendor-form/div/div[2]/div/form/div/div[11]/div/ng-select")).click();
 	  Thread.sleep(1000);
-	  d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-vendor-form/div/div[2]/div/form/div/div[11]/div/ng-select")).click();
+	  d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-vendor-form/div/div[2]/div/form/div/div[11]/div/ng-select")).click();
 	  Thread.sleep(1000);
-	  d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-vendor-form/div/div[2]/div/form/div/div[11]/div/ng-select")).sendKeys("Tamil nadu");
+	  d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-vendor-form/div/div[2]/div/form/div/div[11]/div/ng-select/ng-dropdown-panel/div/div[2]/div[32]/span")).click();
 	  Thread.sleep(1000);
-	  d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-vendor-form/div/div[2]/div/form/div/div[11]/div/ng-select")).click();
-	  
-	  
+	  d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-vendor-form/div/div[2]/div/form/div/div[12]/div/ng-select/div/span")).click();
+	  Thread.sleep(1000);
+	  d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-vendor-form/div/div[2]/div/form/div/div[12]/div/ng-select/ng-dropdown-panel/div/div[2]/div[8]/span")).click();
+	  Thread.sleep(1000);
+	  d.findElement(By.xpath("/html/body/app-root/app-layout/app-vertical/div/div/div/app-vendor-form/div/div[2]/div/form/button")).click();
+	  d.navigate().refresh();
+	  Thread.sleep(1000);
+	  d.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div/app-vendor-form/div/div[1]/div/div/div/button")).click();
+
 	  
      
 	    
