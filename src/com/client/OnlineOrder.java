@@ -8,6 +8,7 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class OnlineOrder {
@@ -31,6 +32,7 @@ public class OnlineOrder {
 		Thread.sleep(1000);
 		c.findElement(By.xpath("/html/body/p-dynamicdialog/div/div/div[2]/location/p-confirmdialog/div/div/div[3]/button[2]/span")).click();
 		Thread.sleep(1000);
+		System.out.println("location fetched successfully");
 		
 //Normal order 
 		c.findElement(By.xpath("/html/body/app-root/monster-header/div/div/div/div[2]/ul/li[1]/a/span")).click();
@@ -40,13 +42,68 @@ public class OnlineOrder {
 		c.findElement(By.xpath("/html/body/app-root/products-list/div/div[2]/div/div/div/product-card/div/div[2]/div/div[2]/div/button")).click();
 		Thread.sleep(1000);
 		c.findElement(By.xpath("/html/body/app-root/products-list/div/div[2]/div/div/div/product-card/div/div[2]/div/div[2]/div/p-inputnumber/span/button[1]/span")).click();
+		Thread.sleep(1000);
+		c.findElement(By.xpath("/html/body/app-root/products-list/div/div[2]/div/div/div/product-card/div/div[2]/div/div[2]/div/p-inputnumber/span/button[1]/span")).click();
+		Thread.sleep(5000);
+		c.findElement(By.xpath("/html/body/app-root/monster-header/div/div/div/div[2]/ul/li[5]/a")).click();
+		Thread.sleep(1000);
+		c.findElement(By.xpath("/html/body/app-root/app-cart-page/div/div[2]/div[2]/div/div[2]/button")).click();
+	    Thread.sleep(1000);
+	    System.out.println("product successfully added to cart");
+	    
+	 // Log in 
+	    
+			c.findElement(By.xpath("//*[@id=\"number\"]/span/input")).click();
+			Thread.sleep(1000);
+			c.findElement(By.xpath("//*[@id=\"number\"]/span/input")).sendKeys("68856885");
+		    Thread.sleep(1000);
+		    c.findElement(By.xpath("/html/body/ngb-offcanvas-panel/div/login/div/div/form[1]/div/div[1]/span/p-inputnumber/span/input")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
+		    Thread.sleep(1000);
+		    c.findElement(By.xpath("//*[@id=\"number\"]/span/input")).sendKeys("6383428924");
+		    Thread.sleep(1000);
+	    	c.findElement(By.xpath("/html/body/ngb-offcanvas-panel/div/login/div/div/form[1]/div/div[2]/button")).click();
+			Thread.sleep(20000);
+		    c.findElement(By.xpath("/html/body/ngb-offcanvas-panel/div/login/div/div/form[2]/div/div[2]/button")).click();
+		    Thread.sleep(1000);
+		    System.out.println("Login successfully");
+//
+		    c.findElement(By.xpath("//*[@id=\"UEnui6DfRWLS1NjkW6T9PQ==\"]")).click();
+		    Thread.sleep(1000);
+		    c.findElement(By.xpath("/html/body/app-root/app-checkout/div/div/div[2]/div/address-list/div[2]/div/div[4]/div/button")).click();
+		    Thread.sleep(1000);
+	        c.findElement(By.xpath("//input[@class='form-check-input ng-pristine ng-valid ng-touched']")).click();
+		    Thread.sleep(1000);
+		    c.findElement(By.xpath("//button[@class='btn btn-danger rounded-0']")).click();
+		    Thread.sleep(1000);
+		    
+// Adding new address		    
+	//	    c.findElement(By.xpath("/html/body/app-root/app-checkout/div/div/div[2]/div/address-list/div[1]/div/button")).click();
+		//    Thread.sleep(1000);
+		  //  c.findElement(By.xpath("/html/body/app-root/app-checkout/div/div/div[2]/div/address-list/div/div/change-address/div/div[3]/form/div[1]/textarea")).sendKeys("187, Jawahar Nagar, Saibaba Colony, Coimbatore, Tamil Nadu 640138, India");
+           // Thread.sleep(1000);
+           // c.findElement(By.xpath("/html/body/app-root/app-checkout/div/div/div[2]/div/address-list/div/div/change-address/div/div[3]/form/div[2]/input")).sendKeys("user");
+           // Thread.sleep(1000);
+           // c.findElement(By.xpath("/html/body/app-root/app-checkout/div/div/div[2]/div/address-list/div/div/change-address/div/div[3]/form/div[3]/input")).sendKeys("45");
+           // Thread.sleep(1000);
+          //  c.findElement(By.xpath("/html/body/app-root/app-checkout/div/div/div[2]/div/address-list/div/div/change-address/div/div[3]/form/div[4]/input")).sendKeys("French street");
+          //  Thread.sleep(1000);
+          //  c.findElement(By.xpath("/html/body/app-root/app-checkout/div/div/div[2]/div/address-list/div/div/change-address/div/div[3]/form/div[5]/div/p-dropdown/div/span")).click();
+          //  Thread.sleep(1000);
+           // c.findElement(By.xpath("/html/body/app-root/app-checkout/div/div/div[2]/div/address-list/div/div/change-address/div/div[3]/form/div[5]/div/p-dropdown/div/p-overlay/div/div/div/div[2]/ul/p-dropdownitem[32]/li")).click();
+            //Thread.sleep(1000);
+           // c.findElement(By.xpath("/html/body/app-root/app-checkout/div/div/div[2]/div/address-list/div/div/change-address/div/div[3]/form/div[6]/div/p-dropdown/div/span")).click();
+          //  Thread.sleep(1000);
+        //    c.findElement(By.xpath("/html/body/app-root/app-checkout/div/div/div[2]/div/address-list/div/div/change-address/div/div[3]/form/div[6]/div/p-dropdown/div/p-overlay/div/div/div/div[2]/ul/p-dropdownitem[8]/li")).click();
+      //      Thread.sleep(1000);
+    //        c.findElement(By.xpath("//input[@id='home']//following-sibling::label[1]")).click();
+           // Thread.sleep(1000);
+           // c.findElement(By.xpath("/html/body/app-root/app-checkout/div/div/div[2]/div/address-list/div/div/change-address/div/div[3]/form/div[10]")).click();
+          //  Thread.sleep(3000);
+           // System.out.println("New address added successfully");
+         	
 		
-		
-		
-		
-		
-		
-//Bulk order
+//Bulk order 
+            
     c.findElement(By.xpath("/html/body/app-root/monster-header/div/div/div/div[2]/ul/li[2]/a/span")).click();
 		Thread.sleep(1000);
 		c.findElement(By.xpath("/html/body/app-root/bullk-order-form/div/div[2]/div/form/div/div[3]/div/div[1]/div/p-dropdown/div/span")).click();
@@ -79,8 +136,9 @@ public class OnlineOrder {
 		Thread.sleep(1000);
 		c.findElement(By.xpath("/html/body/app-root/bullk-order-form/div/div[2]/div/form/div/div[3]/div/div[12]/div/textarea")).sendKeys(" as soon as possible");
 		Thread.sleep(1000);
-		c.findElement(By.xpath("//button[@class='btn btn-mred w-100 mt-3 px-5 rounded-0 py-3 btn-lg']")).click();
+	    c.findElement(By.xpath("/html/body/app-root/bullk-order-form/div/div[2]/div/form/div/div[3]/div/div[13]/button")).click();
 		Thread.sleep(1000);
+		System.out.println("Bulk order placed successfully");
 	
 //Bulk order reflection in superadmin 
 		
@@ -108,22 +166,6 @@ Robot bulksupply = new Robot();
 bulksupply.keyPress(KeyEvent.VK_ENTER);
 Thread.sleep(1000);
 c.findElement(By.xpath("/html/body/ngb-modal-window/div/div/div[2]/form/div/div[2]/button")).click();
-		
-		//
-// Log in 
-	//	c.findElement(By.xpath("/html/body/app-root/monster-header/div/div/div/div[2]/ul/li[3]/a")).click();
-		//Thread.sleep(1000);
-	//	c.findElement(By.xpath("//*[@id=\"number\"]/span/input")).sendKeys("68856885");
-//		Thread.sleep(1000);
-	//	c.findElement(By.xpath("/html/body/ngb-offcanvas-panel/div/login/div/div/form[1]/div/div[1]/span/p-inputnumber/span/input")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
-	//	Thread.sleep(1000);
-//		c.findElement(By.xpath("//*[@id=\"number\"]/span/input")).sendKeys("6383428924");
-	//	Thread.sleep(1000);
-//		c.findElement(By.xpath("/html/body/ngb-offcanvas-panel/div/login/div/div/form[1]/div/div[2]/button")).click();
-	//	Thread.sleep(1000);
-//		c.findElement(By.xpath("//*[@id=\"otp\"]")).sendKeys("930753");
-	//	Thread.sleep(1000);
-	//	c.findElement(By.xpath("/html/body/ngb-offcanvas-panel/div/login/div/div/form[2]/div/div[2]/button")).click();
 
 
 		
